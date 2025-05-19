@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exam Guide Nigeria - Past Questions & Study Resources</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="WAEC, NECO, JAMB, Past Questions, Exam Guide Nigeria, Education">
+    <meta name="description" content="Your ultimate guide to academic success in Nigeria. Access WAEC, NECO, JAMB past questions, study materials, and expert tutoring.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header/Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            color: #0066cc;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .logo span {
+            color: #ff9900;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0066cc;
+        }
+
+        .auth-buttons button {
+            padding: 0.5rem 1rem;
+            margin-left: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .login {
+            background: transparent;
+            color: #0066cc;
+            border: 1px solid #0066cc;
+        }
+
+        .login:hover {
+            background: #0066cc;
+            color: white;
+        }
+
+        .signup {
+            background: #0066cc;
+            color: white;
+        }
+
+        .signup:hover {
+            background: #0055aa;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            padding: 1rem 2.5rem;
+            background: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Exam Categories */
+        .exams {
+            padding: 5rem 5%;
+            text-align: center;
+            background: #f5f5f5;
+        }
+
+        .exams h3 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #0066cc;
+            font-weight: 700;
+        }
+
+        .exam-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .exam-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .exam-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .exam-card i {
+            font-size: 3rem;
+            color: #0066cc;
+            margin-bottom: 1.5rem;
+        }
+
+        .exam-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .exam-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+        }
+
+        .about-content {
+            width: 60%;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #0066cc;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 35%;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 5%;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            color: #0066cc;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #ff9900;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 5%;
+            background: white;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            color: #0066cc;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: left;
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: #0066cc;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonial-content {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-author {
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: #0066cc;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: #0066cc;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff9900;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p, .contact-card a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #252525;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .footer-column {
+            width: 30%;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff9900;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff9900;
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #0066cc;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-content {
+                width: 55%;
+            }
+            
+            .about-image {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 0.8rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .about {
+                flex-direction: column;
+            }
+            
+            .about-content, .about-image {
+                width: 100%;
+            }
+            
+            .about-image {
+                margin-top: 3rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-column {
+                width: 100%;
+            }
+            
+            .exam-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <div class="logo">
+            <h1>ExamGuide<span>NG</span></h1>
+        </div>
+        
+        <nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#exams">Exams</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="auth-buttons">
+                <button class="login">Login</button>
+                <button class="signup">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Your Ultimate Guide to Academic Success</h2>
+            <p>Access WAEC, NECO, JAMB, and Post-UTME past questions with detailed solutions, expert tutoring, and comprehensive study resources tailored for Nigerian students.</p>
+            <a href="#exams" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Exam Categories -->
+    <section class="exams" id="exams">
+        <h3>Popular Exams We Cover</h3>
+        <div class="exam-grid">
+            <div class="exam-card">
+                <i class="fas fa-book-open"></i>
+                <h4>WAEC</h4>
+                <p>Comprehensive past questions and solutions from the last 10+ years</p>
+            </div>
+            <div class="exam-card">
+                <i class="fas fa-pen-fancy"></i>
+                <h4>JAMB</h4>
+                <p>UTME & Post-UTME Materials with CBT practice tests</p>
+            </div>
+            <div class="exam-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h4>NECO</h4>
+                <p>SSSCE & GCE Solutions with detailed explanations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>About Exam Guide Nigeria</h2>
+            <p>At Exam Guide Nigeria, we go beyond traditional education – we are your dedicated ally in achieving academic success. With a profound understanding of the Nigerian educational landscape, our mission is to connect students with the resources and support they need to excel in their studies.</p>
+            <p>Whether you are looking for comprehensive tutorials, expert guidance, or detailed course packages, our committed team is ready to help you realize your educational goals. With Exam Guide Nigeria, navigating your academic journey becomes a seamless and rewarding experience.</p>
+            <a href="#services" class="cta-button">Our Services</a>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Students studying">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Our Comprehensive Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-laptop"></i>
+                <h3>Online Classes</h3>
+                <p>Interactive live classes with qualified teachers covering all subjects and exam topics.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>Past Questions</h3>
+                <p>10+ years of past questions with detailed solutions and answer explanations.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>One-on-One Tutoring</h3>
+                <p>Personalized tutoring sessions tailored to your specific needs and learning style.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-brain"></i>
+                <h3>Exam Strategies</h3>
+                <p>Proven techniques to help you approach exams with confidence and maximize your scores.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile App</h3>
+                <p>Study on the go with our comprehensive mobile app featuring practice tests and progress tracking.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-users"></i>
+                <h3>Study Groups</h3>
+                <p>Collaborate with other students in moderated study groups for peer learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    Exam Guide Nigeria transformed my study experience! Their team was incredibly supportive and knowledgeable about the exam requirements, helping me prepare effectively. The personalized attention I received made all the difference in my success.
+                </div>
+                <div class="testimonial-author">- Chikezie David</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    I am so grateful for the guidance I received from Exam Guide Nigeria. Their instructors were attentive and truly understood my learning needs. Thanks to their expertise, I passed my exams with flying colors.
+                </div>
+                <div class="testimonial-author">- Ademola Emmanuel</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    Working with Exam Guide Nigeria was a pivotal moment in my education. As a student preparing for competitive exams, I felt overwhelmed. Their resources and expert advice helped me navigate the process.
+                </div>
+                <div class="testimonial-author">- Ibrahim Aishat</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Call Us</h3>
+                <a href="tel:+2348065006313">+234 806 500 6313</a>
+                <a href="tel:+2348123456789">+234 812 345 6789</a>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Us</h3>
+                <a href="mailto:info@examguideng.com">info@examguideng.com</a>
+                <a href="mailto:support@examguideng.com">support@examguideng.com</a>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Visit Us</h3>
+                <p>123 Education Avenue</p>
+                <p>Lagos, Nigeria</p>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/2348065006313">Chat with us</a>
+                <p>Available 24/7</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Exam Guide NG</h3>
+                <p>Your trusted partner in academic excellence. We provide comprehensive exam preparation resources for Nigerian students.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#exams">Exam Resources</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Exams</h3>
+                <ul>
+                    <li><a href="#">WAEC</a></li>
+                    <li><a href="#">NECO</a></li>
+                    <li><a href="#">JAMB</a></li>
+                    <li><a href="#">NABTEB</a></li>
+                    <li><a href="#">Post-UTME</a></li>
+                    <li><a href="#">GCE</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Exam Guide Nigeria. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('show');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Scroll reveal animation
+        window.addEventListener('scroll', revealOnScroll);
+        
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.exam-card, .service-card, .testimonial-card, .contact-card');
+            
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i];
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            }
+        }
+        
+        // Initialize elements with opacity 0 for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.exam-card, .service-card, .testimonial-card, .contact-card');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.6s ease-out';
+            });
+            
+            // Trigger initial check
+            revealOnScroll();
+        });
+    </script>
+</body>
+</html>
