@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exam Guide Nigeria - Past Questions & Study Resources</title>
+    <title>Exam Guide Nigeria - WAEC, NECO, JAMB Past Questions & Study Resources</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="WAEC, NECO, JAMB, Past Questions, Exam Guide Nigeria, Education">
-    <meta name="description" content="Your ultimate guide to academic success in Nigeria. Access WAEC, NECO, JAMB past questions, study materials, and expert tutoring.">
+    <meta name="keywords" content="WAEC past questions, NECO exam solutions, JAMB CBT practice, Nigeria exam prep, Post-UTME materials,WAEC, NECO, JAMB, Past Questions, Exam Guide Nigeria, Education">
+    <meta name="description" content="Nigeria's most comprehensive exam preparation platform with 10+ years of WAEC, NECO, JAMB past questions, video lessons, CBT practice tests, and personalized tutoring.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <script>
-      window.va =
-        window.va ||
-        function () {
-          (window.vaq = window.vaq || []).push(arguments);
-        };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <!-- End Vercel Analytics -->
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Exam Guide Nigeria - Past Questions & Study Resources">
+    <meta property="og:description" content="Your ultimate guide to academic success in Nigeria. Access WAEC, NECO, JAMB past questions with detailed solutions.">
+    <meta property="og:image" content="https://examguideng.com/images/social-preview.jpg">
+    <meta property="og:url" content="https://examguideng.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exam Guide Nigeria - Past Questions & Study Resources">
+    <meta name="twitter:description" content="Your ultimate guide to academic success in Nigeria. Access WAEC, NECO, JAMB past questions with detailed solutions.">
+    <meta name="twitter:image" content="https://examguideng.com/images/social-preview.jpg">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         /* Base Styles & Reset */
@@ -30,13 +36,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', 'Montserrat', sans-serif;
         }
 
         body {
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Header/Navbar */
@@ -46,11 +53,22 @@
             align-items: center;
             padding: 1rem 5%;
             background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.5rem 5%;
+            box-shadow: 0 5px 20px rgba(0, 102, 204, 0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
         }
 
         .logo h1 {
@@ -63,6 +81,11 @@
             color: #ff9900;
         }
 
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -70,6 +93,7 @@
 
         nav ul li {
             margin-left: 2rem;
+            position: relative;
         }
 
         nav ul li a {
@@ -77,20 +101,37 @@
             color: #555;
             font-weight: 600;
             transition: color 0.3s;
+            font-size: 1rem;
         }
 
         nav ul li a:hover {
             color: #0066cc;
         }
 
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #0066cc;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
         .auth-buttons button {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.2rem;
             margin-left: 1rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s;
+            font-size: 0.9rem;
         }
 
         .login {
@@ -111,6 +152,8 @@
 
         .signup:hover {
             background: #0055aa;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
         }
 
         /* Hero Section */
@@ -118,19 +161,27 @@
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             margin-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
         }
 
         .hero-content h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .hero-content p {
@@ -139,6 +190,14 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .cta-button {
@@ -153,12 +212,78 @@
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
         }
 
         .cta-button:hover {
             background: #e68a00;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(255, 153, 0, 0.4);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 5%;
+            background: #0066cc;
+            color: white;
+            text-align: center;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ff9900;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
         /* Exam Categories */
@@ -168,11 +293,30 @@
             background: #f5f5f5;
         }
 
-        .exams h3 {
+        .section-title {
             font-size: 2.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             color: #0066cc;
             font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #ff9900;
+            bottom: -10px;
+            left: 25%;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
         }
 
         .exam-grid {
@@ -189,6 +333,23 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             width: 280px;
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exam-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: #0066cc;
+            transition: height 0.3s;
+        }
+
+        .exam-card:hover:before {
+            height: 100%;
         }
 
         .exam-card:hover {
@@ -200,6 +361,11 @@
             font-size: 3rem;
             color: #0066cc;
             margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .exam-card:hover i {
+            transform: scale(1.1);
         }
 
         .exam-card h4 {
@@ -211,6 +377,25 @@
         .exam-card p {
             color: #666;
             font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exam-card .exam-button {
+            padding: 0.5rem 1.5rem;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .exam-card .exam-button:hover {
+            background: #0055aa;
+            transform: translateY(-2px);
         }
 
         /* About Section */
@@ -220,10 +405,38 @@
             align-items: center;
             justify-content: space-between;
             background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about:before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 102, 204, 0.05);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            z-index: 0;
+        }
+
+        .about:after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 153, 0, 0.05);
+            border-radius: 50%;
+            bottom: -150px;
+            right: -150px;
+            z-index: 0;
         }
 
         .about-content {
             width: 60%;
+            position: relative;
+            z-index: 1;
         }
 
         .about h2 {
@@ -240,15 +453,45 @@
             line-height: 1.8;
         }
 
+        .about-features {
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon {
+            color: #ff9900;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
         .about-image {
             width: 35%;
             position: relative;
+            z-index: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .about-image img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
         }
 
         /* Services Section */
@@ -256,13 +499,7 @@
             padding: 5rem 5%;
             background: #f5f5f5;
             text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2.5rem;
-            color: #0066cc;
-            margin-bottom: 3rem;
-            font-weight: 700;
+            position: relative;
         }
 
         .services-grid {
@@ -275,20 +512,29 @@
 
         .service-card {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
         .service-card i {
             font-size: 2.5rem;
             color: #ff9900;
             margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover i {
+            transform: rotate(15deg) scale(1.1);
         }
 
         .service-card h3 {
@@ -300,20 +546,171 @@
         .service-card p {
             color: #666;
             font-size: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Testimonials */
-        .testimonials {
+        .service-card .learn-more {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .service-card .learn-more i {
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            color: #0066cc;
+            margin-bottom: 0;
+        }
+
+        .service-card .learn-more:hover {
+            color: #0055aa;
+            transform: translateX(5px);
+        }
+
+        /* Pricing Section */
+        .pricing {
             padding: 5rem 5%;
             background: white;
             text-align: center;
         }
 
-        .testimonials h2 {
-            font-size: 2.5rem;
-            color: #0066cc;
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
             margin-bottom: 3rem;
+        }
+
+        .pricing-tab {
+            padding: 0.8rem 2rem;
+            background: #f5f5f5;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .pricing-tab:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .pricing-tab:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        .pricing-tab.active {
+            background: #0066cc;
+            color: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .pricing-card.popular {
+            border: 2px solid #0066cc;
+            transform: scale(1.03);
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #0066cc;
+            color: white;
+            padding: 0.3rem 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg) translate(30%, -50%);
+            transform-origin: center;
+            width: 150px;
+            text-align: center;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .price {
+            font-size: 2.5rem;
             font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 1.5rem;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: #666;
+        }
+
+        .pricing-features {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            list-style: none;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features i {
+            color: #4CAF50;
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .pricing-button {
+            width: 100%;
+            padding: 1rem;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.popular .pricing-button {
+            background: #ff9900;
+        }
+
+        .pricing-button:hover {
+            background: #0055aa;
+            transform: translateY(-2px);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 5%;
+            background: #f5f5f5;
+            text-align: center;
         }
 
         .testimonial-grid {
@@ -325,47 +722,321 @@
         }
 
         .testimonial-card {
-            background: #f9f9f9;
-            padding: 2rem;
+            background: white;
+            padding: 2.5rem 2rem;
             border-radius: 10px;
             text-align: left;
             position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .testimonial-card:before {
             content: '"';
             font-size: 5rem;
             color: #0066cc;
-            opacity: 0.2;
+            opacity: 0.1;
             position: absolute;
             top: 10px;
             left: 20px;
+            font-family: serif;
+            line-height: 1;
         }
 
         .testimonial-content {
             margin-top: 1.5rem;
-            font-style: italic;
             color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial-author {
             margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: #0066cc;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-rating {
+            color: #ff9900;
+            margin-top: 0.5rem;
+        }
+
+        /* Schools Section */
+        .schools {
+            padding: 5rem 5%;
+            background: white;
+            text-align: center;
+        }
+
+        .school-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .school-logo {
+            height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .school-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Mobile App CTA */
+        .app-cta {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .app-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .app-content {
+            width: 50%;
+            text-align: left;
+        }
+
+        .app-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .app-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .app-features {
+            margin-bottom: 2rem;
+        }
+
+        .app-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .app-feature i {
+            color: #ff9900;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .app-button {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 0.8rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .app-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .app-button i {
+            font-size: 1.8rem;
+            margin-right: 0.8rem;
+        }
+
+        .app-button-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-button-text span:first-child {
+            font-size: 0.7rem;
+        }
+
+        .app-button-text span:last-child {
+            font-size: 1.1rem;
             font-weight: 600;
+        }
+
+        .app-image {
+            width: 40%;
+            position: relative;
+        }
+
+        .app-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateY(-15deg);
+            transition: transform 0.5s;
+        }
+
+        .app-image:hover img {
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 5%;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            text-align: left;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
             color: #0066cc;
         }
 
-        /* Contact Section */
-        .contact {
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
             padding: 5rem 5%;
             background: #0066cc;
             color: white;
             text-align: center;
         }
 
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 700;
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .newsletter-button {
+            padding: 0 1.5rem;
+            background: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .newsletter-button:hover {
+            background: #e68a00;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: white;
+            text-align: center;
         }
 
         .contact-grid {
@@ -377,65 +1048,144 @@
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: #f9f9f9;
             padding: 2rem;
             border-radius: 10px;
             transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .contact-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         .contact-card i {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            color: #ff9900;
+            color: #0066cc;
         }
 
         .contact-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: #333;
         }
 
         .contact-card p, .contact-card a {
-            color: white;
+            color: #666;
             text-decoration: none;
             display: block;
             margin-bottom: 0.5rem;
         }
 
         .contact-card a:hover {
+            color: #0066cc;
             text-decoration: underline;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            padding: 1rem 2rem;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #0055aa;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
             background: #252525;
             color: white;
-            padding: 3rem 5%;
-            text-align: center;
+            padding: 4rem 5% 2rem;
         }
 
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
             text-align: left;
         }
 
         .footer-column {
-            width: 30%;
             margin-bottom: 2rem;
         }
 
         .footer-column h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
             color: #ff9900;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #ff9900;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column p {
+            color: #aaa;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
         }
 
         .footer-column ul {
@@ -450,6 +1200,14 @@
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-column ul li a i {
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
         }
 
         .footer-column ul li a:hover {
@@ -457,18 +1215,26 @@
         }
 
         .social-links {
+            display: flex;
+            gap: 1rem;
             margin-top: 1.5rem;
         }
 
         .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             color: white;
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
-            color: #ff9900;
+            background: #ff9900;
+            transform: translateY(-3px);
         }
 
         .copyright {
@@ -477,6 +1243,30 @@
             border-top: 1px solid #444;
             color: #aaa;
             font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .payment-method {
+            width: 50px;
+            height: 30px;
+            background: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.2rem;
+        }
+
+        .payment-method img {
+            max-width: 100%;
+            max-height: 100%;
         }
 
         /* Mobile Menu */
@@ -487,6 +1277,7 @@
             color: #0066cc;
             font-size: 1.5rem;
             cursor: pointer;
+            z-index: 1001;
         }
 
         /* Responsive Design */
@@ -498,29 +1289,42 @@
             .about-image {
                 width: 40%;
             }
+
+            .app-content {
+                width: 60%;
+            }
+
+            .app-image {
+                width: 35%;
+            }
         }
 
         @media (max-width: 768px) {
             nav ul {
                 display: none;
-                position: absolute;
-                top: 80px;
+                position: fixed;
+                top: 0;
                 left: 0;
-                width: 100%;
+                width: 80%;
+                height: 100vh;
                 background: white;
                 flex-direction: column;
-                padding: 1rem 0;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 5rem 2rem;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
             }
             
             nav ul.show {
+                transform: translateX(0);
                 display: flex;
             }
             
             nav ul li {
                 margin: 0;
-                text-align: center;
-                padding: 0.8rem 0;
+                padding: 1rem 0;
+                border-bottom: 1px solid #eee;
             }
             
             .mobile-menu-btn {
@@ -546,13 +1350,39 @@
             .hero-content p {
                 font-size: 1.1rem;
             }
+
+            .app-container {
+                flex-direction: column;
+            }
+
+            .app-content, .app-image {
+                width: 100%;
+            }
+
+            .app-image {
+                margin-top: 3rem;
+            }
+
+            .app-buttons {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
             .hero-content h2 {
                 font-size: 1.8rem;
             }
-            
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+
             .footer-column {
                 width: 100%;
             }
@@ -560,13 +1390,37 @@
             .exam-card {
                 width: 100%;
             }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: 5px;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-button {
+                border-radius: 5px;
+                padding: 1rem;
+            }
+
+            .pricing-tabs {
+                flex-direction: column;
+            }
+
+            .pricing-tab {
+                border-radius: 5px !important;
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header/Navbar -->
-    <header>
+    <header id="mainHeader">
         <div class="logo">
+            <img src="assets/images/exam-guide-logo.jpg" alt="ExamGuideNG Logo">
             <h1>ExamGuide<span>NG</span></h1>
         </div>
         
@@ -579,6 +1433,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#exams">Exams</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -593,138 +1448,489 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Your Ultimate Guide to Academic Success</h2>
-            <p>Access WAEC, NECO, JAMB, and Post-UTME past questions with detailed solutions, expert tutoring, and comprehensive study resources tailored for Nigerian students.</p>
-            <a href="#exams" class="cta-button">Get Started</a>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Your Ultimate Guide to Academic Success in Nigeria</h2>
+            <p>Access 10+ years of WAEC, NECO, JAMB past questions with detailed solutions, video lessons, CBT practice tests, and personalized tutoring from top educators.</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="cta-button">Get Started Now</a>
+                <a href="#exams" class="cta-button secondary">Explore Exams</a>
+            </div>
+        </div>
+        <a href="#stats" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="stats-container">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number">10,000+</div>
+                <div class="stat-label">Past Questions</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number">500,000+</div>
+                <div class="stat-label">Students</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
         </div>
     </section>
 
     <!-- Exam Categories -->
     <section class="exams" id="exams">
-        <h3>Popular Exams We Cover</h3>
+        <h2 class="section-title" data-aos="fade-up">Popular Exams We Cover</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Comprehensive preparation materials for all major Nigerian examinations</p>
         <div class="exam-grid">
-            <div class="exam-card">
+            <div class="exam-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-book-open"></i>
                 <h4>WAEC</h4>
-                <p>Comprehensive past questions and solutions from the last 10+ years</p>
+                <p>Complete past questions and solutions from the last 10+ years with detailed explanations and marking schemes.</p>
+                <a href="#" class="exam-button">View Materials</a>
             </div>
-            <div class="exam-card">
+            <div class="exam-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-pen-fancy"></i>
                 <h4>JAMB</h4>
-                <p>UTME & Post-UTME Materials with CBT practice tests</p>
+                <p>UTME & Post-UTME Materials with realistic CBT practice tests and performance analytics.</p>
+                <a href="#" class="exam-button">View Materials</a>
             </div>
-            <div class="exam-card">
+            <div class="exam-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fas fa-graduation-cap"></i>
                 <h4>NECO</h4>
-                <p>SSSCE & GCE Solutions with detailed explanations</p>
+                <p>SSSCE & GCE Solutions with detailed explanations, examiner's reports, and common mistakes.</p>
+                <a href="#" class="exam-button">View Materials</a>
+            </div>
+            <div class="exam-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-university"></i>
+                <h4>Post-UTME</h4>
+                <p>University-specific past questions and solutions for all major Nigerian universities.</p>
+                <a href="#" class="exam-button">View Materials</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="about-content">
-            <h2>About Exam Guide Nigeria</h2>
+        <div class="about-content" data-aos="fade-right">
+            <h2>Why Choose Exam Guide Nigeria?</h2>
             <p>At Exam Guide Nigeria, we go beyond traditional education – we are your dedicated ally in achieving academic success. With a profound understanding of the Nigerian educational landscape, our mission is to connect students with the resources and support they need to excel in their studies.</p>
-            <p>Whether you are looking for comprehensive tutorials, expert guidance, or detailed course packages, our committed team is ready to help you realize your educational goals. With Exam Guide Nigeria, navigating your academic journey becomes a seamless and rewarding experience.</p>
-            <a href="#services" class="cta-button">Our Services</a>
+            
+            <div class="about-features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Verified Past Questions</h4>
+                        <p>Accurate and up-to-date materials reviewed by subject experts</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Detailed Solutions</h4>
+                        <p>Step-by-step explanations, not just answer keys</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Performance Tracking</h4>
+                        <p>Monitor your progress and identify areas for improvement</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#services" class="cta-button">Explore Our Services</a>
         </div>
-        <div class="about-image">
+        <div class="about-image" data-aos="fade-left">
             <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Students studying">
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <h2>Our Comprehensive Services</h2>
+        <h2 class="section-title" data-aos="fade-up">Our Comprehensive Services</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Everything you need to excel in your exams, all in one place</p>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-laptop"></i>
-                <h3>Online Classes</h3>
-                <p>Interactive live classes with qualified teachers covering all subjects and exam topics.</p>
+                <h3>Interactive Online Classes</h3>
+                <p>Live classes with qualified teachers covering all subjects and exam topics with Q&A sessions.</p>
+                <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-file-alt"></i>
-                <h3>Past Questions</h3>
-                <p>10+ years of past questions with detailed solutions and answer explanations.</p>
+                <h3>Past Questions Bank</h3>
+                <p>10+ years of past questions with detailed solutions, answer explanations, and marking schemes.</p>
+                <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fas fa-chalkboard-teacher"></i>
-                <h3>One-on-One Tutoring</h3>
-                <p>Personalized tutoring sessions tailored to your specific needs and learning style.</p>
+                <h3>Personalized Tutoring</h3>
+                <p>One-on-one sessions tailored to your specific needs, learning style, and weak areas.</p>
+                <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-brain"></i>
                 <h3>Exam Strategies</h3>
                 <p>Proven techniques to help you approach exams with confidence and maximize your scores.</p>
+                <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-mobile-alt"></i>
-                <h3>Mobile App</h3>
-                <p>Study on the go with our comprehensive mobile app featuring practice tests and progress tracking.</p>
+                <h3>Mobile Learning</h3>
+                <p>Study on the go with our comprehensive mobile app featuring offline access and progress tracking.</p>
+                <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fas fa-users"></i>
                 <h3>Study Groups</h3>
-                <p>Collaborate with other students in moderated study groups for peer learning.</p>
+                <p>Collaborate with other students in moderated study groups for peer learning and motivation.</p>
+                <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title" data-aos="fade-up">Affordable Pricing Plans</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Choose the perfect plan for your exam preparation needs</p>
+        
+        <div class="pricing-tabs" data-aos="fade-up" data-aos-delay="200">
+            <button class="pricing-tab active">Monthly</button>
+            <button class="pricing-tab">Yearly (Save 30%)</button>
+        </div>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>Basic</h3>
+                <div class="price">₦2,500 <span>/month</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Access to all past questions</li>
+                    <li><i class="fas fa-check"></i> Basic solutions</li>
+                    <li><i class="fas fa-check"></i> 5 CBT practice tests/month</li>
+                    <li><i class="fas fa-check"></i> Email support</li>
+                    <li><i class="fas fa-times"></i> Video lessons</li>
+                    <li><i class="fas fa-times"></i> Live classes</li>
+                </ul>
+                <button class="pricing-button">Choose Plan</button>
+            </div>
+            <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="400">
+                <div class="popular-tag">MOST POPULAR</div>
+                <h3>Standard</h3>
+                <div class="price">₦5,000 <span>/month</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Everything in Basic</li>
+                    <li><i class="fas fa-check"></i> Detailed solutions</li>
+                    <li><i class="fas fa-check"></i> Unlimited CBT tests</li>
+                    <li><i class="fas fa-check"></i> 10 video lessons/month</li>
+                    <li><i class="fas fa-check"></i> 2 live classes/month</li>
+                    <li><i class="fas fa-times"></i> Priority support</li>
+                </ul>
+                <button class="pricing-button">Choose Plan</button>
+            </div>
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="500">
+                <h3>Premium</h3>
+                <div class="price">₦8,000 <span>/month</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Everything in Standard</li>
+                    <li><i class="fas fa-check"></i> Unlimited video lessons</li>
+                    <li><i class="fas fa-check"></i> Unlimited live classes</li>
+                    <li><i class="fas fa-check"></i> Priority support</li>
+                    <li><i class="fas fa-check"></i> Performance analytics</li>
+                    <li><i class="fas fa-check"></i> Study planner</li>
+                </ul>
+                <button class="pricing-button">Choose Plan</button>
+            </div>
+        </div>
+        
+        <p style="margin-top: 3rem; color: #666;" data-aos="fade-up" data-aos-delay="600">
+            Need a custom plan for your school? <a href="#contact" style="color: #0066cc; font-weight: 600;">Contact us</a> for bulk discounts and institutional pricing.
+        </p>
+    </section>
+
     <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
-        <h2>What Our Students Say</h2>
+        <h2 class="section-title" data-aos="fade-up">Success Stories</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Hear from students who aced their exams with ExamGuideNG</p>
         <div class="testimonial-grid">
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="testimonial-content">
-                    Exam Guide Nigeria transformed my study experience! Their team was incredibly supportive and knowledgeable about the exam requirements, helping me prepare effectively. The personalized attention I received made all the difference in my success.
+                    Exam Guide Nigeria transformed my study experience! Their detailed solutions helped me understand concepts I'd struggled with for years. I went from scoring 45% in Mathematics to 82% in my WAEC exams. The mobile app was especially helpful for studying during commute.
                 </div>
-                <div class="testimonial-author">- Chikezie David</div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Chikezie David">
+                    </div>
+                    <div class="author-info">
+                        <h4>Chikezie David</h4>
+                        <p>WAEC Candidate, 2023</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="testimonial-content">
-                    I am so grateful for the guidance I received from Exam Guide Nigeria. Their instructors were attentive and truly understood my learning needs. Thanks to their expertise, I passed my exams with flying colors.
+                    The JAMB CBT simulator was a game-changer for me. It helped me manage my time effectively and reduced my exam anxiety. I scored 298 in JAMB and gained admission to study Medicine at UNILAG. The one-on-one tutoring sessions were worth every penny!
                 </div>
-                <div class="testimonial-author">- Ademola Emmanuel</div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Amina Yusuf">
+                    </div>
+                    <div class="author-info">
+                        <h4>Amina Yusuf</h4>
+                        <p>JAMB Candidate, 2023</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
                 <div class="testimonial-content">
-                    Working with Exam Guide Nigeria was a pivotal moment in my education. As a student preparing for competitive exams, I felt overwhelmed. Their resources and expert advice helped me navigate the process.
+                    As a parent, I was skeptical about online learning, but ExamGuideNG proved me wrong. My son's performance improved dramatically after just 3 months. The progress reports helped me track his improvement, and the teachers were always available to answer questions.
                 </div>
-                <div class="testimonial-author">- Ibrahim Aishat</div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Mr. Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Mr. Johnson</h4>
+                        <p>Parent</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Schools Section -->
+    <section class="schools">
+        <h2 class="section-title" data-aos="fade-up">Trusted by Schools Nationwide</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Leading educational institutions recommend our platform</p>
+        <div class="school-logos">
+            <img src="https://via.placeholder.com/150x60?text=School+1" alt="School Logo" class="school-logo" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://via.placeholder.com/150x60?text=School+2" alt="School Logo" class="school-logo" data-aos="fade-up" data-aos-delay="250">
+            <img src="https://via.placeholder.com/150x60?text=School+3" alt="School Logo" class="school-logo" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://via.placeholder.com/150x60?text=School+4" alt="School Logo" class="school-logo" data-aos="fade-up" data-aos-delay="350">
+            <img src="https://via.placeholder.com/150x60?text=School+5" alt="School Logo" class="school-logo" data-aos="fade-up" data-aos-delay="400">
+        </div>
+    </section>
+
+    <!-- Mobile App CTA -->
+    <section class="app-cta">
+        <div class="app-container">
+            <div class="app-content" data-aos="fade-right">
+                <h2>Study Anywhere with Our Mobile App</h2>
+                <p>Access all our resources on your smartphone or tablet, even without internet connection. Download now to get started!</p>
+                
+                <div class="app-features">
+                    <div class="app-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Offline access to all past questions</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Practice tests with instant grading</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Personalized study reminders</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Progress tracking and analytics</span>
+                    </div>
+                </div>
+                
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i>
+                        <div class="app-button-text">
+                            <span>Download on the</span>
+                            <span>App Store</span>
+                        </div>
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i>
+                        <div class="app-button-text">
+                            <span>Get it on</span>
+                            <span>Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="app-image" data-aos="fade-left">
+                <img src="https://via.placeholder.com/300x600?text=Mobile+App+Screenshot" alt="ExamGuideNG Mobile App">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Find answers to common questions about our platform</p>
+        
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-question">
+                    <span>How current are your past questions?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We update our question bank annually to include the most recent exam papers. Our current collection includes questions from 2010 to 2023 for all major exams, with 2024 papers being added as soon as they're released.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                <div class="faq-question">
+                    <span>Can I access the materials offline?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Our mobile app allows you to download materials for offline access. You can study anywhere, anytime without needing an internet connection. Downloaded materials sync automatically when you're back online.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-question">
+                    <span>Do you offer refunds?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a 7-day money-back guarantee if you're not satisfied with our service. After accessing more than 30% of the materials, refunds are prorated based on usage. Institutional purchases may have different refund policies.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="350">
+                <div class="faq-question">
+                    <span>How do the live classes work?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our live classes are interactive sessions conducted via Zoom or our custom virtual classroom. You can ask questions in real-time, participate in discussions, and get immediate feedback. All classes are recorded and available for later viewing if you miss a session.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="faq-question">
+                    <span>Are your tutors qualified?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! All our tutors are certified teachers with at least 5 years of experience preparing students for Nigerian exams. Many are former examiners or have advanced degrees in their subject areas. We conduct thorough background checks and ongoing performance evaluations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-container" data-aos="fade-up">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for exam updates, study tips, and exclusive offers.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">We respect your privacy. Unsubscribe at any time.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2>Get In Touch</h2>
+        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We're here to help with all your exam preparation needs</p>
+        
         <div class="contact-grid">
-            <div class="contact-card">
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-phone-alt"></i>
                 <h3>Call Us</h3>
+                <a href="tel:+2348104831075">+234 810 483 1075</a>
                 <a href="tel:+2348065006313">+234 806 500 6313</a>
-                <a href="tel:+2348123456789">+234 812 345 6789</a>
+                <p>Mon-Fri: 8am - 6pm</p>
+                <p>Sat: 10am - 4pm</p>
             </div>
-            <div class="contact-card">
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="250">
                 <i class="fas fa-envelope"></i>
                 <h3>Email Us</h3>
-                <a href="mailto:info@examguideng.com">info@examguideng.com</a>
+                <a href="mailto:abdurrofiuanimashaun66@gmail.com">abdurrofiuanimashaun66@gmail.com</a>
                 <a href="mailto:support@examguideng.com">support@examguideng.com</a>
+                <a href="mailto:tutors@examguideng.com">tutors@examguideng.com</a>
+                <p>Response within 24 hours</p>
             </div>
-            <div class="contact-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Visit Us</h3>
-                <p>123 Education Avenue</p>
-                <p>Lagos, Nigeria</p>
-            </div>
-            <div class="contact-card">
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fab fa-whatsapp"></i>
                 <h3>WhatsApp</h3>
                 <a href="https://wa.me/2348065006313">Chat with us</a>
+                <a href="https://whatsapp.com/channel/0029VbAPhBF9sBIBA5hDLW2Y">Join our Channel</a>
+                <p>Fast responses</p>
                 <p>Available 24/7</p>
             </div>
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="350">
+                <i class="fab fa-facebook"></i>
+                <h3>Facebook</h3>
+                <a href="https://www.facebook.com/share/1AbCjrQ6jz/?mibextid=wwXIfr">Visit our Page</a>
+                <p>Daily updates</p>
+                <p>Exam tips</p>
+            </div>
+        </div>
+        
+        <div class="contact-form" data-aos="fade-up" data-aos-delay="400">
+            <h3 style="text-align: center; margin-bottom: 1.5rem;">Send Us a Message</h3>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="tutoring">Tutoring Services</option>
+                        <option value="school">School Partnership</option>
+                        <option value="payment">Payment Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
         </div>
     </section>
 
@@ -733,49 +1939,78 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Exam Guide NG</h3>
-                <p>Your trusted partner in academic excellence. We provide comprehensive exam preparation resources for Nigerian students.</p>
+                <p>Nigeria's leading exam preparation platform, helping students excel in WAEC, NECO, JAMB and other national examinations since 2015.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/share/1AbCjrQ6jz/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#exams">Exam Resources</a></li>
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#exams"><i class="fas fa-chevron-right"></i> Exam Resources</a></li>
+                    <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Exams</h3>
                 <ul>
-                    <li><a href="#">WAEC</a></li>
-                    <li><a href="#">NECO</a></li>
-                    <li><a href="#">JAMB</a></li>
-                    <li><a href="#">NABTEB</a></li>
-                    <li><a href="#">Post-UTME</a></li>
-                    <li><a href="#">GCE</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> WAEC</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> NECO</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> JAMB</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> NABTEB</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Post-UTME</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> GCE</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><a href="tel:+2348104831075"><i class="fas fa-phone-alt"></i> +234 810 483 1075</a></li>
+                    <li><a href="tel:+2348065006313"><i class="fas fa-phone-alt"></i> +234 806 500 6313</a></li>
+                    <li><a href="mailto:abdurrofiuanimashaun66@gmail.com"><i class="fas fa-envelope"></i> abdurrofiuanimashaun66@gmail.com</a></li>
+                    <li><a href="https://wa.me/2348065006313" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a></li>
+                    <li><a href="https://whatsapp.com/channel/0029VbAPhBF9sBIBA5hDLW2Y" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a></li>
+                    <li><a href="https://www.facebook.com/share/1AbCjrQ6jz/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i> Facebook Page</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2023 Exam Guide Nigeria. All rights reserved.
+            &copy; 2023 Exam Guide Nigeria. All rights reserved. | Founded by Tutor Rofiu | Designed with <i class="fas fa-heart" style="color: #ff9900;"></i> for Nigerian students
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('show');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('show') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
         // Smooth scrolling for anchor links
@@ -784,7 +2019,10 @@
                 e.preventDefault();
                 
                 // Close mobile menu if open
-                navMenu.classList.remove('show');
+                if (navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
                 
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -792,36 +2030,103 @@
             });
         });
         
-        // Scroll reveal animation
-        window.addEventListener('scroll', revealOnScroll);
-        
-        function revealOnScroll() {
-            const elements = document.querySelectorAll('.exam-card, .service-card, .testimonial-card, .contact-card');
-            
-            for (let i = 0; i < elements.length; i++) {
-                const element = elements[i];
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
-        }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
         
-        // Initialize elements with opacity 0 for animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.exam-card, .service-card, .testimonial-card, .contact-card');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // Style back to top button
+        backToTopButton.style.display = 'none';
+        backToTopButton.style.position = 'fixed';
+        backToTopButton.style.bottom = '30px';
+        backToTopButton.style.right = '30px';
+        backToTopButton.style.width = '50px';
+        backToTopButton.style.height = '50px';
+        backToTopButton.style.backgroundColor = '#0066cc';
+        backToTopButton.style.color = 'white';
+        backToTopButton.style.borderRadius = '50%';
+        backToTopButton.style.justifyContent = 'center';
+        backToTopButton.style.alignItems = 'center';
+        backToTopButton.style.fontSize = '1.2rem';
+        backToTopButton.style.cursor = 'pointer';
+        backToTopButton.style.transition = 'all 0.3s';
+        backToTopButton.style.zIndex = '999';
+        
+        backToTopButton.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#ff9900';
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        backToTopButton.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#0066cc';
+            this.style.transform = 'translateY(0)';
+        });
+
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
             
-            animatedElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'all 0.6s ease-out';
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
             });
-            
-            // Trigger initial check
-            revealOnScroll();
+        });
+
+        // Pricing tabs functionality
+        const pricingTabs = document.querySelectorAll('.pricing-tab');
+        
+        pricingTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                pricingTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Here you would typically switch between monthly and yearly pricing
+                // This is just a visual demo - actual implementation would update prices
+            });
+        });
+
+        // Form submission handling (demo)
+        const forms = document.querySelectorAll('form');
+        
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, you would send the form data to your server
+                // This is just a demo showing a success message
+                if (this.classList.contains('newsletter-form')) {
+                    alert('Thank you for subscribing to our newsletter!');
+                    this.reset();
+                } else if (this.querySelector('#message')) {
+                    alert('Thank you for your message! We will get back to you soon.');
+                    this.reset();
+                }
+            });
         });
     </script>
 </body>
