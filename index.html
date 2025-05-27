@@ -1280,6 +1280,107 @@
             z-index: 1001;
         }
 
+        /* New Sections */
+        .exam-syllabus {
+            padding: 5rem 5%;
+            background: white;
+            text-align: center;
+        }
+
+        .syllabus-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .syllabus-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .syllabus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .syllabus-card h3 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .syllabus-card ul {
+            list-style: none;
+        }
+
+        .syllabus-card ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .syllabus-card ul li i {
+            color: #ff9900;
+            margin-right: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        .study-tips {
+            padding: 5rem 5%;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .tips-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            text-align: left;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-card h3 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .tip-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .tip-card .tip-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #0066cc;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .about-content {
@@ -1433,8 +1534,10 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#exams">Exams</a></li>
+                <li><a href="#syllabus">Syllabus</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#tips">Study Tips</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1515,6 +1618,45 @@
         </div>
     </section>
 
+    <!-- Exam Syllabus Section -->
+    <section class="exam-syllabus" id="syllabus">
+        <h2 class="section-title" data-aos="fade-up">Official Exam Syllabuses</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Download the complete syllabus for each exam to guide your preparation</p>
+        
+        <div class="syllabus-container">
+            <div class="syllabus-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>WAEC Syllabus</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> All subjects covered</li>
+                    <li><i class="fas fa-check"></i> Detailed topic breakdown</li>
+                    <li><i class="fas fa-check"></i> Recommended textbooks</li>
+                    <li><i class="fas fa-check"></i> Exam format explained</li>
+                </ul>
+                <a href="#" class="exam-button" style="margin-top: 1rem;">Download WAEC Syllabus</a>
+            </div>
+            <div class="syllabus-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>JAMB Syllabus</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> UTME subject combinations</li>
+                    <li><i class="fas fa-check"></i> Detailed topic objectives</li>
+                    <li><i class="fas fa-check"></i> Recommended reading</li>
+                    <li><i class="fas fa-check"></i> CBT exam guidelines</li>
+                </ul>
+                <a href="#" class="exam-button" style="margin-top: 1rem;">Download JAMB Syllabus</a>
+            </div>
+            <div class="syllabus-card" data-aos="fade-up" data-aos-delay="400">
+                <h3>NECO Syllabus</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> SSCE & GCE formats</li>
+                    <li><i class="fas fa-check"></i> Subject-specific guidelines</li>
+                    <li><i class="fas fa-check"></i> Practical exam details</li>
+                    <li><i class="fas fa-check"></i> Grading system explained</li>
+                </ul>
+                <a href="#" class="exam-button" style="margin-top: 1rem;">Download NECO Syllabus</a>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-content" data-aos="fade-right">
@@ -1555,6 +1697,45 @@
         </div>
         <div class="about-image" data-aos="fade-left">
             <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Students studying">
+        </div>
+    </section>
+
+    <!-- Study Tips Section -->
+    <section class="study-tips" id="tips">
+        <h2 class="section-title" data-aos="fade-up">Proven Study Tips</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Expert strategies to help you study smarter and score higher</p>
+        
+        <div class="tips-container">
+            <div class="tip-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="tip-number">1</div>
+                <h3>Active Recall Technique</h3>
+                <p>Test yourself frequently instead of just re-reading notes. This strengthens memory retention and identifies knowledge gaps.</p>
+            </div>
+            <div class="tip-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="tip-number">2</div>
+                <h3>Spaced Repetition</h3>
+                <p>Review material over increasing intervals of time to combat the forgetting curve and improve long-term retention.</p>
+            </div>
+            <div class="tip-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="tip-number">3</div>
+                <h3>Pomodoro Method</h3>
+                <p>Study in focused 25-minute blocks with 5-minute breaks to maintain concentration and prevent burnout.</p>
+            </div>
+            <div class="tip-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="tip-number">4</div>
+                <h3>Exam Simulation</h3>
+                <p>Practice under timed conditions to build speed, accuracy, and confidence before the actual exam.</p>
+            </div>
+            <div class="tip-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="tip-number">5</div>
+                <h3>Concept Mapping</h3>
+                <p>Create visual diagrams to connect ideas and see the big picture of how topics relate to each other.</p>
+            </div>
+            <div class="tip-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="tip-number">6</div>
+                <h3>Error Analysis</h3>
+                <p>Review mistakes thoroughly to understand why you got questions wrong and prevent repeating them.</p>
+            </div>
         </div>
     </section>
 
@@ -1615,7 +1796,7 @@
         <div class="pricing-grid">
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
                 <h3>Basic</h3>
-                <div class="price">₦2,500 <span>/month</span></div>
+                <div class="price">₦2,500 <span>/3 month</span></div>
                 <ul class="pricing-features">
                     <li><i class="fas fa-check"></i> Access to all past questions</li>
                     <li><i class="fas fa-check"></i> Basic solutions</li>
@@ -1629,7 +1810,7 @@
             <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="400">
                 <div class="popular-tag">MOST POPULAR</div>
                 <h3>Standard</h3>
-                <div class="price">₦5,000 <span>/month</span></div>
+                <div class="price">₦5,000 <span>/3 month</span></div>
                 <ul class="pricing-features">
                     <li><i class="fas fa-check"></i> Everything in Basic</li>
                     <li><i class="fas fa-check"></i> Detailed solutions</li>
@@ -1642,7 +1823,7 @@
             </div>
             <div class="pricing-card" data-aos="fade-up" data-aos-delay="500">
                 <h3>Premium</h3>
-                <div class="price">₦8,000 <span>/month</span></div>
+                <div class="price">₦7,000 <span>/3 month</span></div>
                 <ul class="pricing-features">
                     <li><i class="fas fa-check"></i> Everything in Standard</li>
                     <li><i class="fas fa-check"></i> Unlimited video lessons</li>
@@ -1671,7 +1852,7 @@
                 </div>
                 <div class="testimonial-author">
                     <div class="author-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Chikezie David">
+                        <img src="assets/images/Chikezie-David.jpeg" alt="Chikezie David">
                     </div>
                     <div class="author-info">
                         <h4>Chikezie David</h4>
@@ -1692,7 +1873,7 @@
                 </div>
                 <div class="testimonial-author">
                     <div class="author-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Amina Yusuf">
+                        <img  src="assets/images/Amina-Yusuf.jpg" alt="Amina Yusuf">
                     </div>
                     <div class="author-info">
                         <h4>Amina Yusuf</h4>
@@ -1713,7 +1894,7 @@
                 </div>
                 <div class="testimonial-author">
                     <div class="author-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Mr. Johnson">
+                        <img src="assets/images/Mr-Johnson.jpg" alt="Mr. Johnson">
                     </div>
                     <div class="author-info">
                         <h4>Mr. Johnson</h4>
