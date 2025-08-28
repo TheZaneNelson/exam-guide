@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamGuideNG Blog - Study Tips & Exam Resources</title>
+    <meta
+      name="description"
+      content="Get the latest study tips, exam updates, and educational resources from ExamGuideNG. Learn from expert tutors and boost your exam performance."
+    />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="ExamGuideNG Blog - Study Tips & Exam Resources"
+    />
+    <meta
+      property="og:description"
+      content="Get the latest study tips, exam updates, and educational resources from ExamGuideNG."
+    />
+    <meta
+      property="og:image"
+      content="https://examguideng.com/images/blog-social-preview.jpg"
+    />
+    <meta property="og:url" content="https://examguideng.com/blog" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      /* Base Styles & Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", "Montserrat", sans-serif;
+      }
+
+      body {
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Header/Navbar */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background: #fff;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      header.scrolled {
+        padding: 0.5rem 5%;
+        box-shadow: 0 5px 20px rgba(0, 102, 204, 0.15);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo h1 {
+        color: #0066cc;
+        font-weight: 700;
+        font-size: 1.8rem;
+      }
+
+      .logo span {
+        color: #ff9900;
+      }
+
+      .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 2rem;
+        position: relative;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 600;
+        transition: color 0.3s;
+        font-size: 1rem;
+      }
+
+      nav ul li a:hover {
+        color: #0066cc;
+      }
+
+      nav ul li a:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #0066cc;
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s;
+      }
+
+      nav ul li a:hover:after {
+        width: 100%;
+      }
+
+      .auth-buttons button {
+        padding: 0.5rem 1.2rem;
+        margin-left: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        font-size: 0.9rem;
+      }
+
+      .login {
+        background: transparent;
+        color: #0066cc;
+        border: 1px solid #0066cc;
+      }
+
+      .login:hover {
+        background: #0066cc;
+        color: white;
+      }
+
+      .signup {
+        background: #0066cc;
+        color: white;
+      }
+
+      .signup:hover {
+        background: #0055aa;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+      }
+
+      /* Blog Hero Section */
+      .blog-hero {
+        background: linear-gradient(
+            rgba(0, 102, 204, 0.8),
+            rgba(0, 102, 204, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 80px;
+        position: relative;
+      }
+
+      .blog-hero-content {
+        max-width: 900px;
+        padding: 0 20px;
+      }
+
+      .blog-hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .blog-hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Blog Posts Section */
+      .blog-posts {
+        padding: 5rem 5%;
+        background: #f5f5f5;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #0066cc;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background: #ff9900;
+        bottom: -10px;
+        left: 25%;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        text-align: center;
+      }
+
+      .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .blog-post {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .blog-post:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .post-image {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .post-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .blog-post:hover .post-image img {
+        transform: scale(1.1);
+      }
+
+      .post-content {
+        padding: 2rem;
+      }
+
+      .post-date {
+        color: #ff9900;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .post-title {
+        color: #0066cc;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      .post-excerpt {
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .post-full {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        display: none;
+      }
+
+      .read-more {
+        display: inline-block;
+        color: #0066cc;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+
+      .read-more:hover {
+        color: #0055aa;
+        text-decoration: underline;
+      }
+
+      /* Admin Panel */
+      .admin-panel {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 3rem auto;
+        max-width: 800px;
+        display: none;
+      }
+
+      .admin-panel h2 {
+        color: #0066cc;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .admin-panel h2:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background: #ff9900;
+        bottom: -10px;
+        left: 25%;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        border-color: #0066cc;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+      }
+
+      .form-group textarea {
+        min-height: 200px;
+        resize: vertical;
+      }
+
+      .image-preview {
+        width: 100%;
+        height: 200px;
+        border: 2px dashed #ddd;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .image-preview img {
+        max-width: 100%;
+        max-height: 100%;
+        display: none;
+      }
+
+      .image-preview span {
+        color: #666;
+      }
+
+      .submit-btn {
+        background: #0066cc;
+        color: white;
+        border: none;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        display: block;
+        margin: 2rem auto 0;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .submit-btn:hover {
+        background: #0055aa;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+      }
+
+      /* Password Prompt */
+      .password-prompt {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+      }
+
+      .password-box {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .password-box h3 {
+        color: #0066cc;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .password-box input {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .password-box button {
+        background: #0066cc;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        width: 100%;
+      }
+
+      .password-box button:hover {
+        background: #0055aa;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        margin-top: 1rem;
+        display: none;
+      }
+
+      /* Footer */
+      footer {
+        background: #252525;
+        color: white;
+        padding: 4rem 5% 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      .footer-column {
+        margin-bottom: 2rem;
+      }
+
+      .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: #ff9900;
+        position: relative;
+        padding-bottom: 0.8rem;
+      }
+
+      .footer-column h3:after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background: #ff9900;
+        bottom: 0;
+        left: 0;
+      }
+
+      .footer-column p {
+        color: #aaa;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-column ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .footer-column ul li a i {
+        margin-right: 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      .footer-column ul li a:hover {
+        color: white;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s;
+      }
+
+      .social-links a:hover {
+        background: #ff9900;
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #444;
+        color: #aaa;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #0066cc;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background: #ff9900;
+        transform: translateY(-5px);
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: #0066cc;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .blog-hero {
+          height: 50vh;
+        }
+
+        .blog-hero-content h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 80%;
+          height: 100vh;
+          background: white;
+          flex-direction: column;
+          padding: 5rem 2rem;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        nav ul.show {
+          transform: translateX(0);
+          display: flex;
+        }
+
+        nav ul li {
+          margin: 0;
+          padding: 1rem 0;
+          border-bottom: 1px solid #eee;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .blog-hero {
+          height: 40vh;
+          margin-top: 70px;
+        }
+
+        .blog-hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .blog-hero-content p {
+          font-size: 1.1rem;
+        }
+
+        .posts-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .admin-panel {
+          padding: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .blog-hero {
+          height: 35vh;
+        }
+
+        .blog-hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .section-subtitle {
+          font-size: 1rem;
+        }
+
+        .admin-panel {
+          padding: 1.5rem;
+        }
+
+        .password-box {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header/Navbar -->
+    <header id="mainHeader">
+      <div class="logo">
+        <img
+          src="../assets/images/exam-guide-logo.jpg"
+          alt="ExamGuideNG Logo"
+        />
+        <h1>ExamGuide<span>NG</span></h1>
+      </div>
+
+      <nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul id="navMenu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../exams.html">Exams</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+          <button class="login">Login</button>
+          <button class="signup">Sign Up</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+      <div
+        class="blog-hero-content"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <h1>ExamGuideNG Blog</h1>
+        <p>
+          Study tips, exam updates, and educational resources to help you
+          succeed
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="blog-posts">
+      <h2 class="section-title" data-aos="fade-up">Latest Articles</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Discover valuable insights and strategies from our expert tutors
+      </p>
+
+      <div class="posts-grid" id="blogContainer">
+        <!-- Blog posts will be loaded here by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Admin Panel (Hidden by default) -->
+    <section class="admin-panel" id="adminPanel">
+      <h2>Create New Blog Post</h2>
+      <form id="blogForm">
+        <div class="form-group">
+          <label for="postTitle">Post Title</label>
+          <input type="text" id="postTitle" required />
+        </div>
+        <div class="form-group">
+          <label for="postImage">Upload Image</label>
+          <div class="image-preview" id="imagePreview">
+            <span>Image will appear here</span>
+            <img id="previewImage" src="#" alt="Preview" />
+          </div>
+          <input type="file" id="postImage" accept="image/*" required />
+        </div>
+        <div class="form-group">
+          <label for="postContent">Content</label>
+          <textarea id="postContent" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="postExcerpt">Short Excerpt</label>
+          <textarea id="postExcerpt" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Publish Post</button>
+      </form>
+    </section>
+
+    <!-- Password Prompt -->
+    <div class="password-prompt" id="passwordPrompt">
+      <div class="password-box">
+        <h3>Admin Access Required</h3>
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="Enter admin password"
+        />
+        <button id="submitPassword">Submit</button>
+        <p class="error-message" id="errorMessage">
+          Incorrect password. Please try again.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Exam Guide NG</h3>
+          <p>
+            Nigeria's leading exam preparation platform, helping students excel
+            in WAEC, NECO, JAMB and other national examinations since 2015.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/share/1AbCjrQ6jz/?mibextid=wwXIfr"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href="../index.html"
+                ><i class="fas fa-chevron-right"></i> Home</a
+              >
+            </li>
+            <li>
+              <a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a>
+            </li>
+            <li>
+              <a href="../about.html"
+                ><i class="fas fa-chevron-right"></i> About Us</a
+              >
+            </li>
+            <li>
+              <a href="../exams.html"
+                ><i class="fas fa-chevron-right"></i> Exam Resources</a
+              >
+            </li>
+            <li>
+              <a href="../pricing.html"
+                ><i class="fas fa-chevron-right"></i> Pricing</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Exams</h3>
+          <ul>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> WAEC</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> NECO</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> JAMB</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> NABTEB</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Post-UTME</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <ul>
+            <li>
+              <a href="tel:+2348104831075"
+                ><i class="fas fa-phone-alt"></i> +234 810 483 1075</a
+              >
+            </li>
+            <li>
+              <a href="tel:+2348065006313"
+                ><i class="fas fa-phone-alt"></i> +234 806 500 6313</a
+              >
+            </li>
+            <li>
+              <a href="mailto:abdurrofiuanimashaun66@gmail.com"
+                ><i class="fas fa-envelope"></i>
+                abdurrofiuanimashaun66@gmail.com</a
+              >
+            </li>
+            <li>
+              <a href="https://wa.me/2348065006313" target="_blank"
+                ><i class="fab fa-whatsapp"></i> WhatsApp Chat</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2023 Exam Guide Nigeria. All rights reserved. | Founded by Tutor
+        Rofiu | Designed with
+        <i class="fas fa-heart" style="color: #ff9900"></i> for Nigerian
+        students
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Initialize AOS animation library
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Password Configuration (Change this to your desired password)
+      const ADMIN_PASSWORD = "ExamGuide2023"; // Change this to your secure password
+
+      // DOM Elements
+      const blogContainer = document.getElementById("blogContainer");
+      const adminPanel = document.getElementById("adminPanel");
+      const passwordPrompt = document.getElementById("passwordPrompt");
+      const adminPassword = document.getElementById("adminPassword");
+      const submitPassword = document.getElementById("submitPassword");
+      const errorMessage = document.getElementById("errorMessage");
+      const blogForm = document.getElementById("blogForm");
+      const imagePreview = document.getElementById("imagePreview");
+      const previewImage = document.getElementById("previewImage");
+      const imageUpload = document.getElementById("postImage");
+      const backToTop = document.getElementById("backToTop");
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navMenu = document.getElementById("navMenu");
+      const header = document.getElementById("mainHeader");
+
+      // Blog data (initial sample data)
+      let blogPosts = [
+        {
+          id: 1,
+          title: "5 Tips for WAEC Mathematics Success",
+          image: "../assets/images/blog/waec-math.jpg",
+          content:
+            "<p>Here are five proven strategies to help you excel in your WAEC Mathematics exam:</p><ol><li><strong>Master the basics</strong> - Ensure you understand fundamental concepts before tackling complex problems.</li><li><strong>Practice past questions</strong> - Familiarize yourself with the exam format and common question types.</li><li><strong>Manage your time</strong> - Learn to allocate appropriate time to different sections.</li><li><strong>Show your working</strong> - Even if the final answer is wrong, you may get partial credit.</li><li><strong>Review mistakes</strong> - Analyze where you went wrong to avoid repeating errors.</li></ol>",
+          excerpt:
+            "Discover proven strategies to ace your WAEC Mathematics exam with these expert tips.",
+          date: "October 15, 2023",
+        },
+        {
+          id: 2,
+          title: "How to Prepare for JAMB CBT Exam",
+          image: "../assets/images/blog/jamb-cbt.jpg",
+          content:
+            "<p>Preparing for the JAMB CBT exam requires a different approach than traditional paper tests:</p><ol><li><strong>Get comfortable with computers</strong> - Basic computer literacy is essential.</li><li><strong>Practice with CBT software</strong> - Use JAMB-approved practice platforms.</li><li><strong>Improve your typing speed</strong> - This helps with essay questions.</li><li><strong>Learn keyboard shortcuts</strong> - They can save valuable time.</li><li><strong>Simulate exam conditions</strong> - Take timed practice tests regularly.</li></ol>",
+          excerpt:
+            "Everything you need to know to prepare effectively for the JAMB Computer-Based Test.",
+          date: "October 5, 2023",
+        },
+      ];
+
+      // Load blog posts from localStorage if available
+      function loadPosts() {
+        const savedPosts = localStorage.getItem("examGuideBlogPosts");
+        if (savedPosts) {
+          blogPosts = JSON.parse(savedPosts);
+        }
+        renderPosts();
+      }
+
+      // Render all blog posts
+      function renderPosts() {
+        blogContainer.innerHTML = "";
+
+        if (blogPosts.length === 0) {
+          blogContainer.innerHTML =
+            '<p class="no-posts" style="text-align: center; grid-column: 1/-1; color: #666;">No blog posts yet. Check back soon!</p>';
+          return;
+        }
+
+        blogPosts.forEach((post) => {
+          const postElement = document.createElement("article");
+          postElement.className = "blog-post";
+          postElement.innerHTML = `
+                    <div class="post-image" data-aos="fade-up">
+                        <img src="${post.image}" alt="${post.title}">
+                    </div>
+                    <div class="post-content" data-aos="fade-up" data-aos-delay="100">
+                        <p class="post-date">${post.date}</p>
+                        <h3 class="post-title">${post.title}</h3>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <div class="post-full" id="post-${post.id}">${post.content}</div>
+                        <a class="read-more" onclick="toggleReadMore(${post.id})">Read More</a>
+                    </div>
+                `;
+          blogContainer.appendChild(postElement);
+        });
+      }
+
+      // Toggle read more/less
+      window.toggleReadMore = function (postId) {
+        const postFull = document.getElementById(`post-${postId}`);
+        const link = document.querySelector(
+          `a[onclick="toggleReadMore(${postId})"]`
+        );
+
+        if (postFull.style.display === "block") {
+          postFull.style.display = "none";
+          link.textContent = "Read More";
+        } else {
+          postFull.style.display = "block";
+          link.textContent = "Read Less";
+          postFull.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      };
+
+      // Show admin panel after password verification
+      function showAdminPanel() {
+        adminPanel.style.display = "block";
+        passwordPrompt.style.display = "none";
+
+        // Scroll to admin panel
+        adminPanel.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Handle image preview
+      imageUpload.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = "block";
+            imagePreview.querySelector("span").style.display = "none";
+          };
+
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Save image to assets folder (simulated - in a real app this would be server-side)
+      function saveImageToAssets(file) {
+        return new Promise((resolve) => {
+          // In a real implementation, this would upload to your server
+          // For this demo, we'll simulate by generating a filename
+          const timestamp = Date.now();
+          const filename = `blog-${timestamp}.${file.name.split(".").pop()}`;
+          const imagePath = `../assets/images/blog/${filename}`;
+
+          // Simulate upload delay
+          setTimeout(() => {
+            resolve(imagePath);
+          }, 1000);
+        });
+      }
+
+      // Event Listeners
+      submitPassword.addEventListener("click", () => {
+        if (adminPassword.value === ADMIN_PASSWORD) {
+          showAdminPanel();
+        } else {
+          errorMessage.style.display = "block";
+          adminPassword.value = "";
+        }
+      });
+
+      blogForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Get form values
+        const title = document.getElementById("postTitle").value;
+        const content = document.getElementById("postContent").value;
+        const excerpt = document.getElementById("postExcerpt").value;
+        const imageFile = document.getElementById("postImage").files[0];
+
+        // Validate image file
+        if (!imageFile) {
+          alert("Please select an image for the blog post");
+          return;
+        }
+
+        // Save image (simulated)
+        const imagePath = await saveImageToAssets(imageFile);
+
+        // Create new post
+        const newPost = {
+          id: Date.now(), // Unique ID
+          title: title,
+          image: imagePath,
+          content: content,
+          excerpt: excerpt,
+          date: new Date().toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+        };
+
+        // Add to beginning of array
+        blogPosts.unshift(newPost);
+
+        // Save to localStorage
+        localStorage.setItem("examGuideBlogPosts", JSON.stringify(blogPosts));
+
+        // Render posts
+        renderPosts();
+
+        // Reset form
+        blogForm.reset();
+        previewImage.style.display = "none";
+        imagePreview.querySelector("span").style.display = "block";
+
+        // Hide admin panel
+        adminPanel.style.display = "none";
+
+        // Show success message
+        alert("Blog post published successfully!");
+
+        // Remove the #addbyadmin from URL
+        history.pushState(null, null, "blog.html");
+      });
+
+      // Back to top button functionality
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTop.classList.add("active");
+        } else {
+          backToTop.classList.remove("active");
+        }
+      });
+
+      backToTop.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Mobile menu toggle
+      mobileMenuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+        mobileMenuBtn.innerHTML = navMenu.classList.contains("show")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll("#navMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("show");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Check URL for admin access
+      window.addEventListener("load", () => {
+        loadPosts();
+
+        // Show password prompt if URL has #addbyadmin
+        if (window.location.hash === "#addbyadmin") {
+          passwordPrompt.style.display = "flex";
+        }
+      });
+
+      // Close password prompt when clicking outside
+      passwordPrompt.addEventListener("click", (e) => {
+        if (e.target === passwordPrompt) {
+          passwordPrompt.style.display = "none";
+          window.location.hash = "";
+        }
+      });
+
+      // Allow pressing Enter in password field
+      adminPassword.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          submitPassword.click();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamGuideNG Blog - Study Tips & Exam Resources</title>
+    <meta
+      name="description"
+      content="Get the latest study tips, exam updates, and educational resources from ExamGuideNG. Learn from expert tutors and boost your exam performance."
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Open Graph / Social Media Meta wTags -->
+    <meta
+      property="og:title"
+      content="ExamGuideNG Blog - Study Tips & Exam Resources"
+    />
+    <meta
+      property="og:description"
+      content="Get the latest study tips, exam updates, and educational resources from ExamGuideNG."
+    />
+    <meta
+      property="og:image"
+      content="https://examguideng.com/images/blog-social-preview.jpg"
+    />
+    <meta property="og:url" content="https://examguideng.com/blog" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      /* Reuse your existing styles from index.html */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header - Reuse your header styles from index.html */
+      header {
+        background: #fff;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        padding: 1rem 5%;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      /* Hero Section */
+      .about-hero {
+        background: linear-gradient(
+            rgba(0, 102, 204, 0.8),
+            rgba(0, 102, 204, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 120px 20px 80px;
+        margin-top: 80px;
+      }
+
+      .about-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .about-hero p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      /* Main Content */
+      .about-content {
+        padding: 5rem 0;
+      }
+
+      .about-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4rem;
+        gap: 3rem;
+      }
+
+      .about-section.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s;
+      }
+
+      .about-image:hover img {
+        transform: scale(1.05);
+      }
+
+      h2 {
+        color: #0066cc;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      h2:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background: #ff9900;
+        bottom: -10px;
+        left: 0;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        color: #555;
+        line-height: 1.8;
+      }
+
+      .mission-values {
+        background: #f5f5f5;
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .value-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .value-card i {
+        font-size: 2.5rem;
+        color: #ff9900;
+        margin-bottom: 1.5rem;
+      }
+
+      .value-card h3 {
+        color: #0066cc;
+        margin-bottom: 1rem;
+      }
+
+      /* Team Section */
+      .team {
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .team-member {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+
+      .member-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 1.5rem;
+        border: 5px solid #0066cc;
+      }
+
+      .member-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .team-member h3 {
+        color: #0066cc;
+        margin-bottom: 0.5rem;
+      }
+
+      .team-member p.position {
+        color: #ff9900;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      /* CTA Section */
+      .cta {
+        background: #0066cc;
+        color: white;
+        text-align: center;
+        padding: 4rem 0;
+      }
+
+      .cta h2 {
+        color: white;
+      }
+
+      .cta h2:after {
+        background: #ff9900;
+      }
+
+      .cta p {
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #ff9900;
+        color: white;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .cta-button:hover {
+        background: #e68a00;
+        transform: translateY(-3px);
+      }
+
+      /* Footer - Reuse your footer styles from index.html */
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .about-section {
+          flex-direction: column;
+        }
+
+        .about-hero h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+    <!-- Reuse your header fonts and icons from index.html -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Reuse your header from index.html -->
+    <header>
+      <div class="logo">
+        <img src="assets/images/exam-guide-logo.jpg" alt="ExamGuideNG Logo" />
+        <h1>ExamGuide<span>NG</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about" class="active">About</a></li>
+          <li><a href="/exams">Exams</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <button class="login">Login</button>
+          <button class="signup">Sign Up</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <h1>Our Story: Empowering Nigerian Students</h1>
+        <p>
+          Founded by Tutor Rofiu, ExamGuideNG was born from a passion to make
+          quality exam preparation accessible to every Nigerian student.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="about-content">
+      <div class="container">
+        <section class="about-section">
+          <div class="about-text">
+            <h2>Meet Tutor Rofiu</h2>
+            <p>
+              Abdurrofi Animashaun (Tutor Rofiu) is a passionate educator with
+              over 8 years of experience preparing Nigerian students for WAEC,
+              NECO, and JAMB examinations. His journey began as a private tutor
+              in Lagos, where he noticed how many students struggled due to lack
+              of access to quality study materials.
+            </p>
+            <p>
+              With a degree in Education from the University of Lagos and
+              multiple teaching certifications, Tutor Rofiu combines pedagogical
+              expertise with practical exam strategies that have helped
+              thousands of students achieve academic success.
+            </p>
+            <p>
+              "My greatest joy is seeing students who once feared mathematics
+              solve complex problems with confidence," he often says.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Tutor Rofiu teaching students"
+            />
+          </div>
+        </section>
+
+        <section class="about-section reverse">
+          <div class="about-text">
+            <h2>How ExamGuideNG Began</h2>
+            <p>
+              In 2015, after years of tutoring students individually, Tutor
+              Rofiu recognized a systemic problem - most students couldn't
+              afford private tutoring, and existing study materials were either
+              outdated or too expensive.
+            </p>
+            <p>
+              He started by compiling past questions and solutions for his
+              students, sharing them freely. The demand grew exponentially, and
+              in 2017, ExamGuideNG was officially launched as a digital platform
+              to reach more students across Nigeria.
+            </p>
+            <p>
+              What began as a simple WhatsApp study group has now grown into
+              Nigeria's most comprehensive exam preparation platform, serving
+              over 500,000 students annually with verified past questions, video
+              lessons, and personalized tutoring.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+              alt="Students using ExamGuideNG"
+            />
+          </div>
+        </section>
+      </div>
+
+      <section class="mission-values">
+        <div class="container">
+          <h2>Our Mission & Values</h2>
+          <p>
+            We believe every Nigerian student deserves equal opportunity to
+            excel in their exams, regardless of background or location.
+          </p>
+
+          <div class="values-grid">
+            <div class="value-card">
+              <i class="fas fa-graduation-cap"></i>
+              <h3>Academic Excellence</h3>
+              <p>
+                We maintain the highest standards in our study materials and
+                teaching methods to ensure student success.
+              </p>
+            </div>
+            <div class="value-card">
+              <i class="fas fa-hand-holding-heart"></i>
+              <h3>Accessibility</h3>
+              <p>
+                Our affordable pricing and free resources make quality education
+                accessible to all.
+              </p>
+            </div>
+            <div class="value-card">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Innovation</h3>
+              <p>
+                We continuously improve our platform with the latest learning
+                technologies and methodologies.
+              </p>
+            </div>
+            <div class="value-card">
+              <i class="fas fa-users"></i>
+              <h3>Community</h3>
+              <p>
+                We foster a supportive learning community where students help
+                each other succeed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="team">
+        <div class="container">
+          <h2>Our Core Team</h2>
+          <p>
+            Behind ExamGuideNG is a dedicated team of educators, developers, and
+            support staff committed to your success.
+          </p>
+
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="member-image">
+                <img
+                  src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Tutor Rofiu"
+                />
+              </div>
+              <h3>Abdurrofi Animashaun</h3>
+              <p class="position">Founder & Lead Educator</p>
+              <p>Mathematics & Physics Specialist with 8+ years experience</p>
+            </div>
+            <div class="team-member">
+              <div class="member-image">
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                  alt="Mrs. Adebayo"
+                />
+              </div>
+              <h3>Mrs. Adebayo</h3>
+              <p class="position">Head of English Department</p>
+              <p>Former WAEC examiner with 15 years teaching experience</p>
+            </div>
+            <div class="team-member">
+              <div class="member-image">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                  alt="Mr. Johnson"
+                />
+              </div>
+              <h3>Mr. Johnson</h3>
+              <p class="position">Technology Director</p>
+              <p>Software engineer specializing in educational technology</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Join Thousands of Successful Students</h2>
+        <p>
+          Start your journey to academic excellence today with Nigeria's most
+          trusted exam preparation platform.
+        </p>
+        <a href="/pricing" class="cta-button">Get Started Now</a>
+      </div>
+    </section>
+
+    <!-- Reuse your footer from index.html -->
+    <footer>
+      <!-- Your existing footer code -->
+    </footer>
+
+    <script>
+      // You can reuse your existing JavaScript from index.html
+    </script>
+  </body>
+</html>
